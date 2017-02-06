@@ -20,7 +20,8 @@ $hideAfterSubmit= $params->get('hideaftersubmit');
 
 if ($showCaptcha){
 	JPluginHelper::importPlugin('captcha');
-	(JEventDispatcher::getInstance())->trigger('onInit', 'dynamic_recaptcha_1');
+	$ed = JEventDispatcher::getInstance();
+	$ed->trigger('onInit', 'dynamic_recaptcha_1');
 }
 
 $form = ModSimpleFormHelper::createForm($formContents, $useLabels, $usePlaceholders, $showCaptcha);

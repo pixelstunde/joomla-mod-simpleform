@@ -82,8 +82,9 @@ class ModSimpleFormHelper
 				case 'button':
 					if ($showCaptcha && (("submit" == $type || "reset" == $type) && !strstr($output,'dynamic_recaptcha_1'))){
 						$showCaptcha = false;
+						$ed = JEventDispatcher::getInstance();
 						$temp .= '<div class="solve-captcha">'.JText::_('MOD_SIMPLEFORM_PLEASE_SOLVE_CAPTCHA').'</div>';
-						$temp .= (JEventDispatcher::getInstance())->trigger('onDisplay', array(null, 'dynamic_recaptcha_1', 'class=""'))[0];
+						$temp .= $ed->trigger('onDisplay', array(null, 'dynamic_recaptcha_1', 'class=""'))[0];
 					}
 					$temp .= ModSimpleFormHelper::button($name, $type);
 					break;
@@ -331,7 +332,8 @@ class ModSimpleFormHelper
 		if ('submit' === $_POST['simpleform']){
 			$captchaSolved = false;
 			if ($showCaptcha){
-				$res = (JEventDispatcher::getInstance())->trigger('onCheckAnswer',$_POST['recaptcha_response_field']);
+                                $ed = JEventDispatcher::getInstance();
+				$res = $ed->trigger('onCheckAnswer',$_POST['recaptcha_response_field']);
 				if($res[0]){
 					$captchaSolved = true;
 				}
