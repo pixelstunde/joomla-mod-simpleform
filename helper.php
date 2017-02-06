@@ -9,6 +9,7 @@
 
 defined('_JEXEC') or die;
 
+
 class ModSimpleFormHelper
 {
 	/**
@@ -445,7 +446,7 @@ class ModSimpleFormHelper
 			else{
                             $banned = array('php', 'html', 'htaccess', 'htpasswd');
                             foreach($banned as $current){
-                                if (stristr($extension, $current){
+                                if (stristr($extension, $current)){
                                     return array('error',JText::_('MOD_SIMPLEFORM_CHECK_FILE_EXTENSIONS'));
                                 }
                             }
