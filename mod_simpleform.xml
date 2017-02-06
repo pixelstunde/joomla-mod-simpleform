@@ -35,10 +35,10 @@
 				/>
 				<field
 					name="uploaddir"
-					type="text"
+					type="folderlist"
 					label="MOD_SIMPLEFORM_UPLOAD_DIR"
 					description="MOD_SIMPLEFORM_UPLOAD_DIR_DESC"
-					value="tmp/"
+                                        directory="images"
 				/>
                                 <field
 					name="receiver"
@@ -69,7 +69,7 @@
 					filter="raw"
 				/>
 			</fieldset>
-			<fieldset name="options">
+			<fieldset name="customization">
 				<field name="useplaceholders"
 					type="checkbox"
 					label="MOD_SIMPLEFORM_USE_PLACEHOLDERS"
