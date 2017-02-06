@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>Simple Form</name>
+	<author>Christian Friedemann</author>
+	<creationDate>December 2016</creationDate>
+	<copyright>Copyright (C) 2016 pixelstun.de. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>c.friedemann@pixelstun.de</authorEmail>
+	<authorUrl>www.pixelstun.de</authorUrl>
+	<version>1.0.0</version>
+        <description>Simple Form based on a php array </description>
+	<files>
+		<filename module="mod_simpleform">mod_simpleform.php</filename>
+		<folder>tmpl</folder>
+		<folder>js</folder>
+		<folder>css</folder>
+		<filename>helper.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_simpleform.ini</language>
+		<language tag="de-DE">de-DE.mod_simpleform.ini</language>
+	</languages>
+	<help key="JHELP_EXTENSIONS_MODULE_MANAGER_MENU" />
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="formcontents"
+					type="textarea"
+					label="MOD_SIMPLEFORM_FORM_CONTENTS"
+					description="MOD_SIMPLEFORM_FORM_CONTENTS_DESC"
+					rows="15"
+					cols="20"
+					filter="raw"
+				/>
+				<field
+					name="uploaddir"
+					type="text"
+					label="MOD_SIMPLEFORM_UPLOAD_DIR"
+					description="MOD_SIMPLEFORM_UPLOAD_DIR_DESC"
+					value="tmp/"
+				/>
+                                <field
+					name="receiver"
+					type="text"
+					label="MOD_SIMPLEFORM_RECEIVER"
+					description="MOD_SIMPLEFORM_RECEIVER_DESC"
+				/>
+				<field
+					name="subject"
+					type="text"
+					label="MOD_SIMPLEFORM_SUBJECT"
+					description="MOD_SIMPLEFORM_SUBJECT_DESC"
+				/>
+				<field name="successmessage"
+					type="textarea"
+					label="MOD_SIMPLEFORM_SUCCESS_MESSAGE"
+					description="MOD_SIMPLEFORM_SUCCESS_MESSAGE_DESC"
+					rows="5"
+					cols="20"
+					filter="raw"
+				/>
+				<field name="errormessage"
+					type="textarea"
+					label="MOD_SIMPLEFORM_ERROR_MESSAGE"
+					description="MOD_SIMPLEFORM_ERROR_MESSAGE_DESC"
+					rows="5"
+					cols="20"
+					filter="raw"
+				/>
+			</fieldset>
+			<fieldset name="options">
+				<field name="useplaceholders"
+					type="checkbox"
+					label="MOD_SIMPLEFORM_USE_PLACEHOLDERS"
+					description="MOD_SIMPLEFORM_USE_PLACEHOLDERS_DESC"
+					value="1"
+				/>
+				<field name="uselabels"
+					type="checkbox"
+					label="MOD_SIMPLEFORM_USE_LABELS"
+					description="MOD_SIMPLEFORM_USE_LABELS_DESC"
+					value="1"
+				/>
+				<field name="showcaptcha"
+					type="checkbox"
+					label="MOD_SIMPLEFORM_SHOW_CAPTCHA"
+					description="MOD_SIMPLEFORM_SHOW_CAPTCHA_DESC"
+					value="1"
+				/>
+				<field name="hideaftersubmit"
+					type="checkbox"
+					label="MOD_SIMPLEFORM_HIDE_AFTER_SUBMIT"
+					description="MOD_SIMPLEFORM_HIDE_AFTER_SUBMIT_DESC"
+					value="1"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
